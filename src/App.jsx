@@ -31,8 +31,8 @@ function App() {
     <>
       <ScrollToTop />
       <Routes>
-        <Route path='/' element={<Navigate to={token ? 'admin/dashboard' : 'admin/login'} />} />
-        <Route path='admin/login' element={token ? <Navigate to='admin/dashboard' /> : <Login />} />
+        <Route path='/' element={<Navigate to={token ? '/admin/dashboard' : '/admin/login'} />} />
+        <Route path='admin/login' element={token ? <Navigate to='/admin/dashboard' /> : <Login />} />
         <Route element={token ? <Layout /> : <Login />}>
           <Route path='admin/dashboard' element={<Dashboard />} />
           <Route path='admin/users' element={<User />} />
