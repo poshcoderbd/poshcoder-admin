@@ -8,3 +8,14 @@ export const axiosReq = axios.create({
   baseURL: baseURL,
   withCredentials: true
 });
+
+
+axiosReq.interceptors.request.use((config) => {
+  const token = localStorage.getItem("poshcoder_admin");
+
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+
+  return config;
+});
